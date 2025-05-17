@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>FIFO Page Replacement</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script src="script.js" defer></script>
+    </head>
+    <body class="bg-gray-100 min-h-screen flex flex-col items-center p-6">
+        <!-- Header -->
+        <h1 class="text-3xl font-bold text-center mb-8">
+            FIFO Page Replacement Algorithm
+        </h1>
+
+        <div class="text-center text-lg">
+            <p>
+                <span class="font-semibold">Submitted by:</span> Joseph Gabriel
+                Castro
+            </p>
+            <p>
+                <span class="font-semibold">Submitted to:</span> Ma'am Arielle
+            </p>
+        </div>
+        <!-- Form Section -->
+        <div
+            class="bg-white p-6 rounded-xl shadow-md w-full max-w-xl space-y-4"
+        >
+            <div>
+                <label class="block font-medium mb-1">Reference String:</label>
+                <input
+                    id="referenceString"
+                    type="text"
+                    class="w-full p-2 border border-gray-300 rounded"
+                    placeholder="e.g. 7, 0, 1, 2, 0, 3, 0, 4"
+                    readonly
+                />
+            </div>
+
+            <div>
+                <label class="block font-medium mb-1">Frame Size:</label>
+                <input
+                    id="frameSizeInput"
+                    type="number"
+                    min="3"
+                    max="5"
+                    class="w-full p-2 border border-gray-300 rounded"
+                    placeholder="min: 3, max: 5"
+                    value="3"
+                />
+            </div>
+
+            <div class="flex flex-col sm:flex-row sm:justify-between gap-4">
+                <button
+                    id="simulateBtn"
+                    class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 w-full sm:w-auto"
+                >
+                    Simulate
+                </button>
+                <button
+                    id="randomBtn"
+                    class="bg-gray-600 text-white px-4 py-2 rounded hover:bg-gray-700 w-full sm:w-auto"
+                >
+                    Randomize Reference String
+                </button>
+            </div>
+        </div>
+
+        <!-- Output Section -->
+        <div class="mt-8 w-full max-w-4xl">
+            <h2 class="text-xl font-semibold mb-4">Simulation Output:</h2>
+            <div
+                id="outputArea"
+                class="bg-white p-4 rounded shadow min-h-[150px] overflow-x-auto flex gap-4"
+            >
+                <!-- Simulation steps will be inserted here -->
+                <!-- Each step is a column of boxes (frames) -->
+                <div
+                    class="flex flex-col items-center bg-gray-100 p-3 rounded-lg shadow-md"
+                >
+                    <div
+                        class="w-14 h-14 border border-gray-300 bg-white rounded-md flex items-center justify-center text-lg font-semibold text-gray-800 mb-2 leading-none"
+                    >
+                        7
+                    </div>
+                    <div
+                        class="w-14 h-14 border border-gray-300 bg-white rounded-md flex items-center justify-center text-lg font-semibold text-gray-800 mb-2 leading-none"
+                    >
+                        0
+                    </div>
+                    <div
+                        class="w-14 h-14 border border-gray-300 bg-white rounded-md flex items-center justify-center text-lg font-semibold text-gray-800 mb-2 leading-none"
+                    >
+                        1
+                    </div>
+                    <div class="text-sm mt-2 font-semibold text-blue-600">
+                        Step 1
+                    </div>
+                </div>
+            </div>
+
+            <div id="pageFaults" class="mt-4 text-lg font-bold text-blue-700">
+                Page Faullts: 4
+            </div>
+        </div>
+    </body>
+</html>
