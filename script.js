@@ -3,7 +3,7 @@ const referenceStringInput = document.querySelector("#referenceString");
 const frameSizeInput = document.querySelector("#frameSizeInput");
 const pageFaultsInput = document.querySelector("#pageFaults");
 
-const length = 20 + Math.floor(Math.random() * 11); // 20 to 30 elements
+const length = 20;
 let referenceString = Array.from({ length }, () =>
     Math.floor(Math.random() * 10)
 );
@@ -17,7 +17,6 @@ function generateMarkupFrame(arrValues, current_step, frameSize) {
     while (paddedValues.length < frameSize) {
         paddedValues.push("");
     }
-
     // Create the boxes markup
     const boxesMarkup = paddedValues
         .map(
